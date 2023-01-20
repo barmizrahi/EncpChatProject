@@ -12,11 +12,11 @@ package="com.example.encpchatproject">
 
 <application
     android:allowBackup="true"
-    android:icon="@drawable/seyahapp_icon"
+    android:icon="@drawable/img_chat"
     android:label="@string/app_name"
-    android:roundIcon="@drawable/seyahapp_icon"
+    android:roundIcon="@drawable/img_chat"
     android:supportsRtl="true"
-    android:theme="@style/Theme.EncpChatProject">
+    android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
     <activity android:name=".view.NotificationActivity"></activity>
 
     <meta-data

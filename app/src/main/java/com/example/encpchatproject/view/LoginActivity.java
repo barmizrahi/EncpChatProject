@@ -29,7 +29,6 @@ public class LoginActivity extends AppCompatActivity {
 
         inputEmailAddress = findViewById(R.id.loginActivity_emailAddress);
         inputPassword = findViewById(R.id.loginActivity_password);
-
         firebaseAuth = FirebaseAuth.getInstance();
     }
 
@@ -45,8 +44,8 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(LoginActivity.this, "Lets Travel!", Toast.LENGTH_SHORT).show();
-
+                                Toast.makeText(LoginActivity.this, "Lets Chat!", Toast.LENGTH_SHORT).show();
+                                startChatActivity();
                             } else {
                                 String errorMessage = task.getException().getLocalizedMessage();
                                 Toast.makeText(LoginActivity.this, errorMessage, Toast.LENGTH_SHORT).show();
@@ -70,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(LoginActivity.this, "Lets Travel!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Lets Chat!", Toast.LENGTH_SHORT).show();
 
                             } else {
                                 String errorMessage = task.getException().getLocalizedMessage();
@@ -93,6 +92,12 @@ public class LoginActivity extends AppCompatActivity {
         boolean isFinishesWithTrueWord = emailAddress.endsWith(".com") || emailAddress.endsWith(".tr");
 
         return isEmailFormatTrue && isFinishesWithTrueWord;
+    }
+
+    private void startChatActivity() {
+        Intent intentToPlacesActivity = new Intent(LoginActivity.this, ChatActivity.class);
+        startActivity(intentToPlacesActivity);
+        finish();
     }
 
 }

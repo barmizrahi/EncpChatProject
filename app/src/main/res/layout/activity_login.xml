@@ -31,6 +31,7 @@
             android:ems="10"
             android:layout_marginBottom="40dp"
             android:hint="E-mail"
+            android:textColor="@color/black"
             android:inputType="textEmailAddress"
             android:paddingHorizontal="25dp" />
 
@@ -40,6 +41,7 @@
             android:layout_height="45dp"
             android:background="@drawable/rounded_vector"
             android:ems="10"
+            android:textColor="@color/black"
             android:hint="Password"
             android:inputType="textPassword"
             android:paddingHorizontal="25dp" />
