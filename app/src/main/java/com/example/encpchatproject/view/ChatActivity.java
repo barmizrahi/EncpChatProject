@@ -104,8 +104,8 @@ public class ChatActivity extends AppCompatActivity {
                                     String userMessageDate = simpleDateFormat.format(date);
 
                                     MessageContent messageContent = new MessageContent(email, userMessageDate, message);
-
-                                    messages.add(messageContent);
+                                    if(email.equals(firebaseAuth.getCurrentUser().getEmail()))
+                                         messages.add(messageContent);
                                     messageRecyclerAdapter.notifyDataSetChanged();
                                 }
 
@@ -122,7 +122,6 @@ public class ChatActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.chat_settings, menu);
-
         return super.onCreateOptionsMenu(menu);
     }
 

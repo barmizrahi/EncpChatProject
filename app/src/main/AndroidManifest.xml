@@ -16,7 +16,7 @@ package="com.example.encpchatproject">
     android:label="@string/app_name"
     android:roundIcon="@drawable/img_chat"
     android:supportsRtl="true"
-    android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+    android:theme="@style/Theme.AppCompat.DayNight">
     <activity android:name=".view.NotificationActivity"></activity>
 
     <meta-data

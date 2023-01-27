@@ -19,7 +19,6 @@ public class LoginActivity extends AppCompatActivity {
 
     private EditText inputEmailAddress;
     private EditText inputPassword;
-
     private FirebaseAuth firebaseAuth;
 
     @Override
@@ -60,9 +59,7 @@ public class LoginActivity extends AppCompatActivity {
     public void signUp(View view) {
         String emailAddress = inputEmailAddress.getText().toString();
         String password = inputPassword.getText().toString();
-
         boolean isInputsValidControl = isInputsValid(emailAddress, password);
-
         if (isInputsValidControl) {
             firebaseAuth.createUserWithEmailAndPassword(emailAddress, password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -70,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
                                 Toast.makeText(LoginActivity.this, "Lets Chat!", Toast.LENGTH_SHORT).show();
-
+                                startChatActivity();
                             } else {
                                 String errorMessage = task.getException().getLocalizedMessage();
                                 Toast.makeText(LoginActivity.this, errorMessage, Toast.LENGTH_SHORT).show();
@@ -95,8 +92,8 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void startChatActivity() {
-        Intent intentToPlacesActivity = new Intent(LoginActivity.this, ChatActivity.class);
-        startActivity(intentToPlacesActivity);
+        Intent intentToChatActivity = new Intent(LoginActivity.this, ChatActivity.class);
+        startActivity(intentToChatActivity);
         finish();
     }
 
