@@ -1,5 +1,6 @@
 package com.example.encpchatproject.adapter;
 
+import android.content.Context;
 import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 import com.example.encpchatproject.model.MessageContent;
 import com.example.encpchatproject.R;
@@ -15,10 +17,12 @@ import java.util.ArrayList;
 public class MessageRecyclerAdapter extends RecyclerView.Adapter<MessageRecyclerAdapter.ViewHolder> {
 
     private static boolean isDarkBackground = false;
+    Context context;
     private final ArrayList<MessageContent> messages;
 
-    public MessageRecyclerAdapter(ArrayList<MessageContent> messages) {
+    public MessageRecyclerAdapter(ArrayList<MessageContent> messages, Context context) {
         this.messages = messages;
+        this.context = context;
     }
 
     @NonNull
@@ -65,7 +69,7 @@ public class MessageRecyclerAdapter extends RecyclerView.Adapter<MessageRecycler
             email = mailStart.length() > 15 ? mailStart.substring(0, 15) + "..." + mailEnd
                     : mailStart + mailEnd;
 
-            String date = messages.get(position).getDate();
+            String date = messages.get(position).getDate()+" ";
             String message = messages.get(position).getMessage();
 
             emailText.setText(email);
@@ -76,13 +80,12 @@ public class MessageRecyclerAdapter extends RecyclerView.Adapter<MessageRecycler
         }
 
         private int getColorById() {
-            Resources resources = messageContentLayout.getResources();
             int colorId = 0;
 
             if (isDarkBackground) {
-                colorId = resources.getColor(R.color.pale_golden_rode);
+                colorId = ContextCompat.getColor(context, R.color.pale_golden_rode);
             } else {
-                colorId = resources.getColor(R.color.chartreuse);
+                colorId = ContextCompat.getColor(context, R.color.chartreuse);
             }
 
             isDarkBackground = !isDarkBackground;

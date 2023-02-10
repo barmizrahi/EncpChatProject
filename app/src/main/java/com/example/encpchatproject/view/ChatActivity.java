@@ -1,6 +1,7 @@
 package com.example.encpchatproject.view;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -71,7 +72,7 @@ public class ChatActivity extends AppCompatActivity {
         linearLayoutManager.setReverseLayout(true);
         chatRecyclerView.setLayoutManager(linearLayoutManager);
 
-        messageRecyclerAdapter = new MessageRecyclerAdapter(messages);
+        messageRecyclerAdapter = new MessageRecyclerAdapter(messages, this);
         chatRecyclerView.setAdapter(messageRecyclerAdapter);
 
         listenToMessagesChangesFromFirebase();

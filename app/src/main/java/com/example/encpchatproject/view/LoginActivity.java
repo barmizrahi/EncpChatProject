@@ -43,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(LoginActivity.this, "Let's Chat!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Let's Encrypt!", Toast.LENGTH_SHORT).show();
                                 startChatActivity();
                             } else {
                                 String errorMessage = task.getException().getLocalizedMessage();
@@ -66,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(LoginActivity.this, "Lets Chat!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, "Lets Encrypt!", Toast.LENGTH_SHORT).show();
                                 startChatActivity();
                             } else {
                                 String errorMessage = task.getException().getLocalizedMessage();
