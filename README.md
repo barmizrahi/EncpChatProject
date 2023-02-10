@@ -1,5 +1,5 @@
  # Encrypted Chat
- An Application for Android which designed to Encrypt yours chat
+ An Application for Android which designed to Encrypt yours Notes
  
  ## Message Encryption Algorithm
     1) Generate unique public id.
