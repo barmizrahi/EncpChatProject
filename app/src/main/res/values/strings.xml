@@ -10,6 +10,6 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="title_activity_maps">Map</string>
-    <string name="send_a_message">Send a message</string>
+    <string name="send_a_message">Write a note here</string>
     <string name="google_maps_key">ff</string>
 </resources>

@@ -23,7 +23,7 @@ public class MessageDeleteManager {
         AlertDialog.Builder alert = new AlertDialog.Builder(from);
 
         alert.setTitle("Are You Sure?");
-        alert.setMessage("Deleting all messages!");
+        alert.setMessage("Deleting all Notes!");
         alert.setCancelable(false);
 
         alert.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
@@ -52,7 +52,7 @@ public class MessageDeleteManager {
         alert.setNegativeButton("No", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Toast.makeText(from.getApplicationContext(), "Messages don't deleted.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(from.getApplicationContext(), "notes don't deleted.", Toast.LENGTH_SHORT).show();
             }
         });
 
